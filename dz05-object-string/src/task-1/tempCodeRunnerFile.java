@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class T1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String keyString = "qwertyuiopasdfghjklzxcvbnm";
+
+        String key = scanner.nextLine().toLowerCase();
+        int leftKey = keyString.indexOf("Введите букву" + key);
+
+        if (leftKey == -1) {
+            System.out.println("Буква слева: m");
+        } else {
+            System.out.println("Буква слева: " + keyString.charAt(leftKey - 1));
+        }
+        scanner.close();
+    }
+}
+// Задача 1. Для введенной с клавиатуры буквы английского алфавита
+
+// нужно вывести слева стоящую букву на стандартной клавиатуре. При этом
+// клавиатура замкнута, т.е. справа от буквы «p» стоит буква «a», а слева от "а"
+// буква "р", также соседними считаются буквы «l» и буква «z», а буква «m» с
+// буквой «q».
+
+// Входные данные: строка входного потока содержит один символ —
+// маленькую букву английского алфавита.
+
+// Выходные данные: следует вывести букву стоящую слева от заданной
+// буквы, с учетом замкнутости клавиатуры
