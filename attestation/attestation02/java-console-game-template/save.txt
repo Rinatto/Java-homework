@@ -1,0 +1,3 @@
+player;Герой;18;5
+inventory;Gold:Золото (10 монет),Potion:Клык зверя
+room;Лес

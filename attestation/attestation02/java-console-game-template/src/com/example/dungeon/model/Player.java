@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Player extends Entity {
     private int attack;
+    private int gold = 0;
     private final List<Item> inventory = new ArrayList<>();
 
     public Player(String name, int hp, int attack) {
@@ -21,5 +22,13 @@ public class Player extends Entity {
 
     public List<Item> getInventory() {
         return inventory;
+    }
+
+    public void addGold(int amount) {
+        gold += amount;
+    }
+
+    public int getGold() {
+        return gold;
     }
 }
