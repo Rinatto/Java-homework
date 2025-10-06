@@ -40,12 +40,41 @@
     - подсчёт уникальных моделей в заданном диапазоне цен
     - цвет автомобиля с минимальной стоимостью
     - средняя стоимость по заданной модели
-- `attestation/attestation02` — **Итоговая работа: текстовая игра "DungeonMini**:
+- `attestation/attestation02` — **Итоговая работа: консольная игра "DungeonMini**:
   - Реализованы команды `move`, `take`, `inventory`, `use`, `fight`
   - Сохранение и загрузка состояния игры в файл
   - Вывод статистики памяти командой `gc-stats`
   - Применение Stream API для отображения инвентаря
   - Работа с исключениями через `InvalidCommandException`
+- `attestation/attestation03` — **Итоговый проект: работа с базой данных PostgreSQL через JDBC**:
+  - Выполнена настройка PostgreSQL и запуск контейнера через Docker
+  - Созданы таблицы и добавлены тестовые данные
+  - Реализованы SQL-запросы с использованием `JOIN`, `UPDATE`, `DELETE`
+  - Использован JDBC драйвер PostgreSQL (`org.postgresql:postgresql:42.7.3`)
+  - Конфигурация подключается через файл `application.properties`
+  - Реализованы основные операции с базой данных (CRUD):
+    - `insertProduct` — добавление тестового товара
+    - `insertCustomer` — добавление тестового покупателя
+    - `createOrder` — создание заказа
+    - `readOrders` — вывод 5 последних заказов с JOIN по таблицам
+    - `updateProduct` — обновление цены товаров категории Тест
+    - `deleteTestRecords` — удаление тестовых записей из всех таблиц
+  - Использованы транзакции и `rollback()` при ошибках
+  - Сборка и запуск через Maven:
+  ```bash
+    mvn compile
+    mvn exec:java
+  ```
+  - Работа с БД:
+    Контейнер PostgreSQL запускается через:
+    ```bash
+    docker run --name pg-db \
+      -e POSTGRES_PASSWORD=postgres \
+      -p 5434:5432 \
+      -d postgres:12 
+    ```
+  - Для работы с БД использовался DBeaver
+    — подключение по `localhost:5434`, логин `postgres`, пароль `postgres`
 
 ## Автор:
 
